@@ -1,5 +1,7 @@
 get '/users' do
   # This is the page that displays all users
+  @all_users = User.all
+  erb :'users/index'
 end
 
 get '/users/new' do
