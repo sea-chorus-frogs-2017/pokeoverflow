@@ -3,3 +3,7 @@ post '/sessions/new' do
   session[:user_id] = @user.id
   redirect to "/users/#{@user.id}"
 end
+
+delete '/sessions' do
+  session.clear
+end
