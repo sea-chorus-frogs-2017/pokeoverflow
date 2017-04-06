@@ -1,7 +1,10 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-   include BCrypt
+  include BCrypt
+
+  has_many :questions
+  has_many :answers, as: :answerable
 
   def password
     @password ||= Password.new(password_hash)
