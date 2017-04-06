@@ -1,7 +1,7 @@
 <h1>Poke Overflow Questions</h1>
   <ul>
     <% @all_questions.each do |question| %>
-      <li><a href="/users/<%= question.user_id %>/questions/<%= question.id %>">
+      <li><a href="/questions/<%= question.id %>">
           <%= question.title %></a></li>
     <% end %>
   </ul>
