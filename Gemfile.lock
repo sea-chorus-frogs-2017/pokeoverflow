@@ -99,4 +99,8 @@ DEPENDENCIES
   sinatra-contrib
 
 BUNDLED WITH
+<<<<<<< HEAD
    1.14.6
+=======
+   1.12.5
+>>>>>>> origin
