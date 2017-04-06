@@ -2,7 +2,7 @@
 Team Poke's Stack Overflow clone
 
 ## Team Members:
-... Linsey Reed, Julie Xu, Josh Mun, Nick Jarin
+Linsey Reed, Julie Xu, Josh Mun, Nick Jarin
 
 ## MVP
 ### Level One
