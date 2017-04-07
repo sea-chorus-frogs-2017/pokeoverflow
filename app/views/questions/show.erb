@@ -1,3 +1,15 @@
 <h2><%= @question.title %></h2>
 <p><%= @question.description %></p>
 <p>Question posted by: <%= @user.username %></p>
+
+
+<hr>
+<div id="comments">
+  <ul>
+    <% @all_comments.each do |comment| %>
+      <p><%= comment.content %> -
+      <% user = User.find(comment.user_id) %>
+      <em><%= user.username %></em></p>
+    <% end %>
+  </ul>
+</div>

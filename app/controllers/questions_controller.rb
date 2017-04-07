@@ -10,6 +10,7 @@ end
 
 get '/questions/:id' do
   @question = Question.find(params[:id])
+  @all_comments = @question.comments
   @user = User.find(@question.user_id)
   erb :'questions/show'
 end
@@ -18,4 +19,5 @@ post '/questions' do
   new_question = Question.create!(params['question'])
   erb :'partials/_questiontitle', layout: false, locals: {question: new_question}
 end
+
 
