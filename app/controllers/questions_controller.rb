@@ -18,3 +18,4 @@ post '/questions' do
   new_question = Question.create!(params['question'])
   erb :'partials/_questiontitle', layout: false, locals: {question: new_question}
 end
+

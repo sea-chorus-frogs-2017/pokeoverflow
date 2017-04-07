@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :questions
   has_many :answers, as: :answerable
-  has_many :comments, as: :commentable
+  has_many :comments
 
   def password
     @password ||= Password.new(password_hash)
