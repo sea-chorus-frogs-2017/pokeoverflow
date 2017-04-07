@@ -1,5 +1,11 @@
 #login-form {
   display: none;
+  float: right;
+}
+
+#register {
+  display: block;
+  float: right;
 }
 
 .email {
@@ -29,4 +35,10 @@
   display: block;
   width: 200px;
   margin-left: 5px;
+}
+
+.nav-buttons {
+  float: right;
+  margin: 5px;
+  padding: 5px;
 }
