@@ -7,7 +7,8 @@ $(document).ready(function() {
       method: 'GET'
     }).done(function(response) {
       $("nav").append(response);
-      $(button).prop("disabled", true);
+      // $(button).prop("disabled", true);
+      $(button).toggle();
     });
   });
 });
