@@ -22,8 +22,12 @@
     <% if session["user_id"] %>
       <%= erb :'users/_logout' %>
     <% else %>
-      <%= erb :'users/_login' %>
-      <button id="register">Register</button>
+      <button id="login-button">Login</button>
+      <div id="login-form">
+        <%= erb :'users/_login' %>
+      </div>
+      <button id="reg-button">Register</button>
+      <div id="register"></div>
     <% end %>
   </nav>
 

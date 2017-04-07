@@ -1,14 +1,16 @@
 $(document).ready(function() {
-  $("nav").on('click', "#register", function(event){
+  $("nav").on('click', "#reg-button", function(event){
     event.preventDefault();
     var button = this;
     $.ajax({
       url: '/users/new',
       method: 'GET'
     }).done(function(response) {
-      $("nav").append(response);
-      // $(button).prop("disabled", true);
-      $(button).toggle();
+      $("#register").append(response);
+      $(button).prop("disabled", true);
     });
+  });
+  $("nav").on('click', '#login-button', function(event){
+    $('#login-form').show();
   });
 });
