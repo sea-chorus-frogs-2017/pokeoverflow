@@ -6,3 +6,11 @@ require 'faker'
                 email: Faker::Internet.email,
                 password: "password" )
 end
+
+
+50.times do
+  Question.create!( title: Faker::Hipster.sentence,
+                    description: Faker::Hipster.paragraph,
+                    user_id: rand(1..20)
+    )
+end
