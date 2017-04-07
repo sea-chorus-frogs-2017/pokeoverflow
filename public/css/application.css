@@ -1,0 +1,44 @@
+#login-form {
+  display: none;
+  float: right;
+}
+
+#register {
+  display: block;
+  float: right;
+}
+
+.email {
+  display: block;
+  width: 200px;
+  margin: 5px;
+}
+
+.password {
+  display: inline-block;
+  width: 125px;
+  margin-left: 5px;
+}
+
+.submit-button {
+  display: inline-block;
+  width: 65px;
+}
+
+.name {
+  display: block;
+  width: 200px;
+  margin: 5px;
+}
+
+.username {
+  display: block;
+  width: 200px;
+  margin-left: 5px;
+}
+
+.nav-buttons {
+  float: right;
+  margin: 5px;
+  padding: 5px;
+}
