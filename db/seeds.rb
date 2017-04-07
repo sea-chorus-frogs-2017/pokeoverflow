@@ -3,22 +3,23 @@ require 'faker'
 User.delete_all
 Question.delete_all
 
-20.times do
+50.times do
   User.create!( name: Faker::Name.name,
                 username: Faker::Internet.user_name,
                 email: Faker::Internet.email,
                 password: "password" )
 end
 
-20.times do
-  Question.create!( title: Faker::Hacker.ingverb,
-                    description: Faker::Hacker.say_something_smart,
-                    user_id: rand(1..20) )
-end
-
 50.times do
   Question.create!( title: Faker::Hipster.sentence,
                     description: Faker::Hipster.paragraph,
-                    user_id: rand(1..20)
+                    user_id: rand(1..50)
     )
+end
+
+20.times do
+  Comment.create!(  content: Faker::Hipster.sentence,
+                    user_id: rand(1..50),
+                    commentable_id: rand(1..50),
+                    commentable_type: "Question" )
 end
