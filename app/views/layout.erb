@@ -18,8 +18,24 @@
   <title>Poke Overflow</title>
 </head>
 <body>
-  <%= erb :'users/_login' %>
-  <%= erb :'users/_logout' %>
+  <nav>
+    <a href='/questions'>Questions</a>
+    <a href='/users'>Users</a>
+    <% if session["user_id"] %>
+      <a href="/users/<%= session[:user_id] %>">Profile</a>
+      <div class="nav-buttons">
+        <%= erb :'users/_logout' %>
+      </div>
+    <% else %>
+      <button class="nav-buttons" id="login-button">Login</button>
+      <button class="nav-buttons" id="reg-button">Register</button>
+    <% end %>
+      <div id="login-form">
+        <%= erb :'users/_login' %>
+      </div>
+      <div id="register"></div>
+  </nav>
+
   <%= yield %>
 </body>
 </html>

@@ -5,7 +5,7 @@ get '/users' do
 end
 
 get '/users/new' do
-  erb :'users/new'
+  erb :'users/new', layout: false
 end
 
 post '/users' do
