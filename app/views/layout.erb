@@ -19,16 +19,19 @@
 </head>
 <body>
   <nav>
+    <a href='/questions'>Questions</a>
+    <a href='/users'>Users</a>
     <% if session["user_id"] %>
+      <a href="/users/<%= session[:user_id] %>">Profile</a>
       <%= erb :'users/_logout' %>
     <% else %>
       <button id="login-button">Login</button>
+      <button id="reg-button">Register</button>
+    <% end %>
       <div id="login-form">
         <%= erb :'users/_login' %>
       </div>
-      <button id="reg-button">Register</button>
       <div id="register"></div>
-    <% end %>
   </nav>
 
   <%= yield %>
