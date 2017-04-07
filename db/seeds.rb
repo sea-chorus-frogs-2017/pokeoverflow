@@ -15,3 +15,10 @@ end
                     description: Faker::Hacker.say_something_smart,
                     user_id: rand(1..20) )
 end
+
+50.times do
+  Question.create!( title: Faker::Hipster.sentence,
+                    description: Faker::Hipster.paragraph,
+                    user_id: rand(1..20)
+    )
+end

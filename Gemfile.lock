@@ -27,9 +27,9 @@ GEM
     diff-lcs (1.2.5)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
-    faker (1.4.3)
+    faker (1.7.3)
       i18n (~> 0.5)
-    i18n (0.7.0)
+    i18n (0.8.1)
     json (1.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
@@ -100,4 +100,3 @@ DEPENDENCIES
 
 BUNDLED WITH
    1.14.6
-
