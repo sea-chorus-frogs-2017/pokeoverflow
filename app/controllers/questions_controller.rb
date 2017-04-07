@@ -15,6 +15,6 @@ get '/questions/:id' do
 end
 
 post '/questions' do
-  Question.create!(params['question'])
-  redirect to '/questions'
+  new_question = Question.create!(params['question'])
+  erb :'partials/_questiontitle', layout: false, locals: {question: new_question}
 end

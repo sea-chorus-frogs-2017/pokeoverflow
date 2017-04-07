@@ -5,9 +5,10 @@
   <div id="new-question-form">
   </div>
 
+<div id="questions">
   <ul>
     <% @all_questions.each do |question| %>
-      <li><a href="/questions/<%= question.id %>">
-          <%= question.title %></a></li>
+      <%= erb :'partials/_questiontitle', locals: {question: question} %>
     <% end %>
   </ul>
+</div>
