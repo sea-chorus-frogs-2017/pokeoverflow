@@ -1,4 +1,4 @@
 get '/questions' do
   @all_questions = Question.all
-  erb :'questions/show'
+  erb :'questions/index'
 end
