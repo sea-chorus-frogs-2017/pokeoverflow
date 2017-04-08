@@ -69,4 +69,9 @@ $(document).ready(function() {
     });
   });
 
+  $("#get-edit-profile-form").on("click", function(e){
+    e.preventDefault();
+    $("#update-profile").show();
+  });
+
 });

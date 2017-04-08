@@ -12,4 +12,19 @@
   </button>
 <% end %>
 
+<form id="update-profile" action="/users/<%= @user.id %>" method="post">
+  <input class="name" type="text" value="<%= @user.name %>" name="user[name]">
+</form>
+
+<!-- <form action = "/users" method = "post">
+  <input class="name" type="text" placeholder="Name" name="user[name]">
+  <input class="username" type="text" placeholder="Username" name="user[username]">
+  <input class="email" type="email" placeholder="email@domain.com" name="user[email]">
+  <input class="password" type="password" placeholder="password" name = "user[password]">
+  <input class="submit-button" type="submit" name="Register">
+</form> -->
+
+<!-- have edit profile button bring up a form -->
+<!-- when that form submits, refresh info -->
+
 <!-- delete account -->
