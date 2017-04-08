@@ -37,4 +37,17 @@ $(document).ready(function() {
       $('#questions ul').prepend(response);
     });
   });
+
+  $("#post-an-answer").on("submit", function(event){
+    event.preventDefault();
+    var content = $('textarea').val();
+    var question_id = this.name // this grabs the id of the question
+    $.ajax({
+      url: '/questions/' + question_id + '/answers',
+      method: 'POST',
+      data: {submission: content}
+    }).done(function(response) {
+      $(".answers").append("<h4>" + response + "</h4>");
+    })
+  });
 });

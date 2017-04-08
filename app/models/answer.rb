@@ -1,4 +1,7 @@
 class Answer < ActiveRecord::Base
-  belongs_to :answerable, polymorphic: true
+
   has_many :comments, as: :commentable
+  belongs_to :question
+  belongs_to :user
+
 end

@@ -1,3 +1,4 @@
+
 <h2><%= @question.title %></h2>
 <p><%= @question.description %></p>
 <p>Question posted by: <%= @user.username %></p>
@@ -22,3 +23,25 @@ we can use a partial here to display the comments (move everything in lines 10-1
 it will be very similar to the question feature!  -->
 <div>
 </div>
+
+<div class="posted-question">
+  <h2><%= @question.title %></h2>
+  <h3><%= @question.description %></h3>
+  <p>Question posted by: <%= @user.username %></p>
+</div>
+
+<div class="answers">
+  <% if @answers %>
+    <% @answers.each do |answer| %>
+      <h4><%= answer.content %></h4>
+    <% end %>
+  <% end %>
+</div>
+
+<% if session[:user_id] %>
+  <form id="post-an-answer" action='/questions/<%= @question.id %>/answers' method='post' name="<%= @question.id %>">
+    <textarea cols="50" rows="8" placeholder="Your answer here..."></textarea>
+    <input class="submit-button" type="submit" value="Post">
+  </form>
+<% end %>
+

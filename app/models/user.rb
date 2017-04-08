@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :questions
-  has_many :answers, as: :answerable
   has_many :comments
+  has_many :answers
+
 
   def password
     @password ||= Password.new(password_hash)
@@ -21,5 +22,4 @@ class User < ActiveRecord::Base
     return user if user && user.password == credentials[:password]
     nil
   end
-
 end

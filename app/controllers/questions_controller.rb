@@ -12,6 +12,7 @@ get '/questions/:id' do
   @question = Question.find(params[:id])
   @all_comments = @question.comments
   @user = User.find(@question.user_id)
+  @answers = Answer.where(question_id: params[:id])
   erb :'questions/show'
 end
 

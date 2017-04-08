@@ -17,9 +17,15 @@ end
     )
 end
 
-20.times do
+50.times do
   Comment.create!(  content: Faker::Hipster.sentence,
                     user_id: rand(1..50),
                     commentable_id: rand(1..50),
                     commentable_type: "Question" )
+
+100.times do
+  Answer.create!( content: Faker::Hipster.sentence,
+                  question_id: rand(1..70),
+                  user_id: rand(1..20))
+
 end
