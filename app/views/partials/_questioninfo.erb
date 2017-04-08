@@ -1,2 +1,9 @@
-<strong><%=question.votes.length%></strong>
-<li><a href="/questions/<%= question.id %>"><%= question.title %></a></li>
+<li>
+  <div id="vote-value">
+    <button class="vote">+</button>
+    <strong><%=question.votes.length%></strong>
+  </div>
+  <a href="/questions/<%= question.id %>">
+    <%= question.title %>
+  </a>
+</li>
