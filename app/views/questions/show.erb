@@ -39,7 +39,7 @@
     <% @answers.each do |answer| %>
     <button type="submit" class="up-vote">+</button>
     <button type="submit" class="down-vote">-</button>
-      <p><strong><%= answer.votes.length %></strong><p>
+    <strong><%= answer.votes.length %></strong>
       <h4><%= answer.content %></h4>
     <% end %>
   <% end %>
