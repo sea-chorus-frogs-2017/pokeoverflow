@@ -8,8 +8,3 @@ delete '/sessions' do
   session.clear
   redirect '/'
 end
-
-# PSEUDOCODE
-# AJAXify the registration UX
-# AJAXify login + login button to make form appear
-# Style it!
