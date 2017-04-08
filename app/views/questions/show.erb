@@ -11,7 +11,7 @@
     <% @all_comments.each do |comment| %>
     <button type="submit" class="up-vote">+</button>
     <button type="submit" class="down-vote">-</button
-      <p>
+      <p><strong><%= comment.votes.length %></strong>
         <%= comment.content %> -
         <% user = User.find(comment.user_id) %>
         <em><%= user.username %></em>
