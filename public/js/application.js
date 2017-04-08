@@ -47,7 +47,7 @@ $(document).ready(function() {
       method: 'POST',
       data: {submission: content}
     }).done(function(response) {
-      $(".answers").append("<button type='submit' class='up-vote'>+</button><button type='submit' class='down-vote'>-</button><strong>0</strong><h4>" + response + "</h4>");
+      $(".answers").append("<button type='submit' class='up-vote'>+</button><button type='submit' class='down-vote'>-</button><strong>0</strong><h4>*new* " + response + "</h4>");
     });
   });
 
