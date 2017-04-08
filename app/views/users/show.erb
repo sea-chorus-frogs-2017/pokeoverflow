@@ -1,1 +1,15 @@
-<h1><%= @user.name %></h1>
+<div id="profile">
+<!-- profile image goes here -->
+  <p>Name: <%= @user.name %></p>
+  <p>Username: <%= @user.username %></p>
+  <p>Email: <%= @user.email %></p>
+</div>
+
+<!-- edit information -->
+<% if session[:user_id] == @user.id %>
+  <button id="get-edit-profile-form">
+    Edit Profile
+  </button>
+<% end %>
+
+<!-- delete account -->
