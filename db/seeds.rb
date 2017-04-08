@@ -22,6 +22,7 @@ end
                     user_id: rand(1..50),
                     commentable_id: rand(1..50),
                     commentable_type: "Question" )
+end
 
 100.times do
   Answer.create!( content: Faker::Hipster.sentence,
