@@ -6,7 +6,10 @@ end
 
 # The resource is comment hence COMMENTS CONTROLLER
 post '/questions/:commentable_id/comments' do
-  Comment.create!(content: params['content'], commentable_id: params[:commentable_id], user_id: session[:user_id], commentable_type: "Question")
+  Comment.create!(content: params['content'],
+    commentable_id: params[:commentable_id],
+    user_id: session[:user_id],
+    commentable_type: "Question")
   redirect to "/questions/#{params[:commentable_id]}"
 end
 

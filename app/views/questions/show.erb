@@ -1,17 +1,28 @@
-
-<h2><%= @question.title %></h2>
-<p><%= @question.description %></p>
-<p>Question posted by: <%= @user.username %></p>
+<div class="posted-question">
+  <h2><%= @question.title %></h2>
+  <h3><%= @question.description %></h3>
+  <p>Question posted by: <%= @user.username %></p>
+</div>
 
 <hr>
 <div id="comments">
-  <ul>
+  <ul id="comments-section">
     <% @all_comments.each do |comment| %>
       <p><%= comment.content %> -
       <% user = User.find(comment.user_id) %>
       <em><%= user.username %></em></p>
     <% end %>
   </ul>
+</div>
+
+<% if session[:user_id] %>
+  <button id="get-comment-form">
+    Create New Comment
+  </button>
+<% end %>
+
+<div id="new-comment-form">
+<p>HI</p>
 </div>
 
 
@@ -25,11 +36,7 @@ it will be very similar to the question feature!
 
 
 
-<div class="posted-question">
-  <h2><%= @question.title %></h2>
-  <h3><%= @question.description %></h3>
-  <p>Question posted by: <%= @user.username %></p>
-</div>
+
 
 <div class="answers">
   <% if @answers %>

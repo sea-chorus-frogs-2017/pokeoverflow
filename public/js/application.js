@@ -48,6 +48,13 @@ $(document).ready(function() {
       data: {submission: content}
     }).done(function(response) {
       $(".answers").append("<h4>" + response + "</h4>");
-    })
+    });
   });
+
+  $("#get-comment-form").one("click", function(e){
+    e.preventDefault();
+    $("#new-comment-form").show();
+  });
+
+
 });

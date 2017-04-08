@@ -7,7 +7,6 @@ get '/questions/new' do
   erb :'questions/new', layout: false
 end
 
-
 get '/questions/:id' do
   @question = Question.find(params[:id])
   @all_comments = @question.comments
