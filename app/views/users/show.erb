@@ -12,7 +12,7 @@
   </button>
 <% end %>
 
-<form id="update-profile" action="/users/<%= @user.id %>" method="post">
+<form id="update-profile" action="/users/<%= @user.id %>" method="post" name="<%= @user.id %>">
   <p> Name: </p>
   <input class="name" type="text" value="<%= @user.name %>" name="user[name]">
   <p> Username: </p>
@@ -22,6 +22,7 @@
 </form>
 
 <!-- add user.description for profile -->
+<!-- make post route, so sleepy -->
 
 <!-- <form action = "/users" method = "post">
   <input class="name" type="text" placeholder="Name" name="user[name]">
