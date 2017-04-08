@@ -22,3 +22,9 @@ end
                     user_id: rand(1..20)
     )
 end
+
+100.times do
+  Answer.create!( content: Faker::Hipster.sentence,
+                  question_id: rand(1..70),
+                  user_id: rand(1..20))
+end
