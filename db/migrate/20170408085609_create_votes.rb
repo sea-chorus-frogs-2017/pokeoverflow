@@ -7,9 +7,6 @@ class CreateVotes < ActiveRecord::Migration
           t.string :voteable_type
 
           t.timestamps null: false
-        end
-      end
     end
-
   end
 end
