@@ -6,12 +6,12 @@
 
 <hr>
 <div id="comments">
+  <h3>Comments:</h3>
   <ul id="comments-section">
     <% @all_comments.each do |comment| %>
     <button type="submit" class="up-vote">+</button>
     <button type="submit" class="down-vote">-</button
       <p>
-        <%= comment.votes.length %>
         <%= comment.content %> -
         <% user = User.find(comment.user_id) %>
         <em><%= user.username %></em>
@@ -34,10 +34,12 @@
 </div>
 
 <div class="answers">
+  <h3> Answers: </h3>
   <% if @answers %>
     <% @answers.each do |answer| %>
     <button type="submit" class="up-vote">+</button>
     <button type="submit" class="down-vote">-</button>
+      <p><strong><%= answer.votes.length %></strong><p>
       <h4><%= answer.content %></h4>
     <% end %>
   <% end %>
