@@ -8,13 +8,16 @@
   # Consider using .one to only allow a single click action.
 
 # Following Hacker News Convention of voting
-post '/questions/:voteable_id/vote' do
+post '/questions/:voteable_id/votes' do
+  p "==========================="
+  p params
+  p "==========================="
   question = Question.find(params[:voteable_id])
-  question.votes.create(value:1)
+  # need to add a vote to the question's votes array
 end
 
 # As far as down-voting I'm thinking we'll have to either remove or destroy a vote value?
-post '/questions/:voteable_id/vote' do
+delete '/questions/:voteable_id/votes' do
   question = Question.find(params[:voteable_id])
-  question.votes.destroy(value:1)
+  # need to destroy a vote in the question's votes array
 end

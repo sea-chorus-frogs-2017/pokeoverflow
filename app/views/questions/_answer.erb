@@ -1,0 +1,10 @@
+<div name="<%= answer.id %>">
+  <form class="upvote" method="post" action="/questions/<%= question.id %>/votes" name="<%= answer.id %>">
+    <button type="submit" class="up-vote">+</button>
+  </form>
+  <form class="downvote" method="post" action="/questions/<%= question.id %>/votes" name="<%= answer.id %>">
+    <button type="submit" class="down-vote">-</button>
+  </form>
+  <strong><%= answer.votes.length %></strong>
+  <h4><%= answer.content %> -- <em><%= answer.username %></em></h4>
+</div>

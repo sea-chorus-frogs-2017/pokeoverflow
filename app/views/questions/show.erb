@@ -37,10 +37,7 @@
   <h3> Answers: </h3>
   <% if @answers %>
     <% @answers.each do |answer| %>
-    <button type="submit" class="up-vote">+</button>
-    <button type="submit" class="down-vote">-</button>
-    <strong><%= answer.votes.length %></strong>
-      <h4><%= answer.content %> -- <em><%= answer.username %></em></h4>
+    <%= erb :'/questions/_answer', :locals => {:question => @question, :answer => answer} %>
     <% end %>
   <% end %>
 </div>

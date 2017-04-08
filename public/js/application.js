@@ -47,7 +47,7 @@ $(document).ready(function() {
       method: 'POST',
       data: {submission: content}
     }).done(function(response) {
-      $(".answers").append("<button type='submit' class='up-vote'>+</button><button type='submit' class='down-vote'>-</button><strong>0</strong><h4>*new* " + response + "</h4>");
+      $(".answers").append(response); // refactor to make this append a partial
     });
   });
 
@@ -66,6 +66,17 @@ $(document).ready(function() {
       data: info
     }).done(function(response){
       $('#comments-section').append('<p>' + response + ' - *new*</p>');
+    });
+  });
+
+  $(".answers").on("click", ".upvote", function(e){
+    e.preventDefault();
+    var question_id = this.name;
+    $.ajax({
+      url: '/questions/' + question_id + '/votes',
+      method: 'POST',
+    }).done(function(response){
+      $()
     });
   });
 
