@@ -26,7 +26,31 @@ end
 
 100.times do
   Answer.create!( content: Faker::Hipster.sentence,
-                  question_id: rand(1..70),
-                  user_id: rand(1..20))
+                  question_id: rand(1..100),
+                  user_id: rand(1..50))
+
+end
+
+100.times do
+  Vote.create!( value: rand(1..2000),
+                  user_id: rand(1..70),
+                  voteable_id: rand(1..50),
+                  voteable_type: "Question")
+
+end
+
+100.times do
+  Vote.create!( value: rand(1..2000),
+                  user_id: rand(1..70),
+                  voteable_id: rand(1..50),
+                  voteable_type: "Comment")
+
+end
+
+100.times do
+  Vote.create!( value: rand(1..2000),
+                  user_id: rand(1..70),
+                  voteable_id: rand(1..50),
+                  voteable_type: "Answer")
 
 end
