@@ -46,3 +46,9 @@
 #new-comment-form {
   display: none;
 }
+
+#questions ul {
+
+  list-style: none;
+
+}

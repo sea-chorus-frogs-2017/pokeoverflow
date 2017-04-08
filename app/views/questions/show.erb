@@ -28,19 +28,6 @@
   </form>
 </div>
 
-
-<!-- Need to add comment button
-this is going to be similar to how to we did the Create Question!
-Need button that says "Add Comment" which will then show the comment form (erb Comments/new) and then on submit of that form it will route to the POST on the comments Controller and create the comment
-the data it sends back needs to match the data that is printed in a comment
-we can use a partial here to display the comments (move everything in lines 11-12 into a partial)
-it will be very similar to the question feature!
-**don't for get to add session refer to question_controller under NEW QUESTION for session code  -->
-
-
-
-
-
 <div class="answers">
   <% if @answers %>
     <% @answers.each do |answer| %>
@@ -55,4 +42,3 @@ it will be very similar to the question feature!
     <input class="submit-button" type="submit" value="Post">
   </form>
 <% end %>
-
