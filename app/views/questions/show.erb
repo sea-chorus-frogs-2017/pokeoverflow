@@ -21,8 +21,11 @@
   </button>
 <% end %>
 
-<div id="new-comment-form">
-<p>HI</p>
+<div>
+  <form id="new-comment-form" action='/questions/<%= @question.id %>/comments' method='post' name='<%= @question.id %>'>
+    <input type="text" name="content" placeholder="comment here">
+    <input type="submit">
+  </form>
 </div>
 
 

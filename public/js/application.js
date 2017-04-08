@@ -56,5 +56,17 @@ $(document).ready(function() {
     $("#new-comment-form").show();
   });
 
+  $("#new-comment-form").on("submit", function(e){
+    e.preventDefault();
+    var question_id = this.name;
+    var info = $(event.target).serialize();
+    $.ajax({
+      url: '/questions/' + question_id + '/comments',
+      method: 'POST',
+      data: info
+    }).done(function(response){
+      $('#comments-section').append('<p>' + response + ' - *new*</p>');
+    });
+  });
 
 });
