@@ -42,3 +42,7 @@
   margin: 5px;
   padding: 5px;
 }
+
+#new-comment-form {
+  display: none;
+}
