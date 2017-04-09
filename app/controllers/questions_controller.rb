@@ -18,7 +18,5 @@ end
 post '/questions' do
   params['question'][:user_id] = session[:user_id]
   new_question = Question.create!(params['question'])
-  erb :'partials/_questiontitle', layout: false, locals: {question: new_question}
+  erb :'partials/_questioninfo', layout: false, locals: {question: new_question}
 end
-
-

@@ -46,3 +46,59 @@
 #new-comment-form {
   display: none;
 }
+
+.view-single-question li {
+  list-style: none;
+}
+
+#vote-value {
+  font-size: 32px;
+}
+.view-single-question a {
+  margin-left: 10px;
+  border-left: 1px solid black;
+}
+
+.up-vote {
+  display:block;
+  width:25px;
+  height:25px;
+  line-height:25px;
+  border: 2px solid #06ab2a;
+  border-radius: 50%;
+  color: white;
+  text-align:center;
+  text-decoration:none;
+  background: #06ab2a;
+  box-shadow: 0 0 3px gray;
+  font-size:20px;
+  font-weight:bold;
+  float: left;
+  margin-left: 0px
+
+}
+.up-vote:hover {
+  background: #024210;
+}
+
+.down-vote {
+  display:block;
+  width:25px;
+  height:25px;
+  line-height:25px;
+  border: 2px solid #d41212;
+  border-radius: 50%;
+  color: white;
+  text-align:center;
+  text-decoration:none;
+  background: #d41212;
+  box-shadow: 0 0 3px gray;
+  font-size:20px;
+  font-weight:bold;
+  float: left;
+  margin-left: 0px
+
+}
+.down-vote:hover {
+  background: #5e0000;
+}

@@ -6,11 +6,16 @@
 
 <hr>
 <div id="comments">
+  <h3>Comments:</h3>
   <ul id="comments-section">
     <% @all_comments.each do |comment| %>
-      <p><%= comment.content %> -
-      <% user = User.find(comment.user_id) %>
-      <em><%= user.username %></em></p>
+    <button type="submit" class="up-vote">+</button>
+    <button type="submit" class="down-vote">-</button
+      <p><strong><%= comment.votes.length %></strong>
+        <%= comment.content %> -
+        <% user = User.find(comment.user_id) %>
+        <em><%= user.username %></em>
+      </p>
     <% end %>
   </ul>
 </div>
@@ -28,23 +33,11 @@
   </form>
 </div>
 
-
-<!-- Need to add comment button
-this is going to be similar to how to we did the Create Question!
-Need button that says "Add Comment" which will then show the comment form (erb Comments/new) and then on submit of that form it will route to the POST on the comments Controller and create the comment
-the data it sends back needs to match the data that is printed in a comment
-we can use a partial here to display the comments (move everything in lines 11-12 into a partial)
-it will be very similar to the question feature!
-**don't for get to add session refer to question_controller under NEW QUESTION for session code  -->
-
-
-
-
-
 <div class="answers">
+  <h3> Answers: </h3>
   <% if @answers %>
     <% @answers.each do |answer| %>
-      <h4><%= answer.content %></h4>
+    <%= erb :'/questions/_answer', :locals => {:question => @question, :answer => answer} %>
     <% end %>
   <% end %>
 </div>
@@ -55,4 +48,3 @@ it will be very similar to the question feature!
     <input class="submit-button" type="submit" value="Post">
   </form>
 <% end %>
-

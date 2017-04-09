@@ -1,0 +1,10 @@
+<li>
+  <div id="<%= question.id %>">
+    <button type="submit" class="up-vote">+</button>
+    <button type="submit" class="down-vote">-</button>
+    <strong id="vote-value"><%=question.votes.length%></strong>
+  </div>
+  <a href="/questions/<%= question.id %>">
+    <%= question.title %>
+  </a>
+</li>

@@ -15,7 +15,6 @@ $(document).ready(function() {
     $('#login-form').show();
   });
 
-  // Need to change .one to .on to allow multiple questions
   $('#get-question-form').one("click", function(event){
     event.preventDefault();
     $.ajax({
@@ -47,7 +46,7 @@ $(document).ready(function() {
       method: 'POST',
       data: {submission: content}
     }).done(function(response) {
-      $(".answers").append("<h4>" + response + "</h4>");
+      $(".answers").append(response); // refactor to make this append a partial
     });
   });
 
@@ -66,6 +65,65 @@ $(document).ready(function() {
       data: info
     }).done(function(response){
       $('#comments-section').append('<p>' + response + ' - *new*</p>');
+    });
+  });
+
+  $(".answers").on("click", ".upvote", function(e){
+    e.preventDefault();
+    var answerId = this.name;
+    var questionId = $(this).find("button").attr("name")
+    $(event.target).prop("disabled", true);
+    $.ajax({
+      url: '/questions/' + questionId + '/answers/' + answerId + '/votes',
+      method: 'POST',
+    }).done(function(response){
+      $("div[name=" + answerId + "] strong").text(response);
+    });
+  });
+
+  $(".answers").on("click", ".downvote", function(e){
+    e.preventDefault();
+    var answerId = this.name;
+    var questionId = $(this).find("button").attr("name")
+    $(event.target).prop("disabled", true);
+    $.ajax({
+      url: '/questions/' + questionId + '/answers/' + answerId + '/votes',
+      method: 'DELETE',
+    }).done(function(response){
+      $("div[name=" + answerId + "] strong").text(response);
+    });
+  });
+
+
+  $('#questions').on("click", ".up-vote", function(e){
+    e.preventDefault();
+    var question = $(this).parent();
+    var question_id = question.attr("id");
+    $(this).prop("disabled", true);
+    $.ajax({
+      url: '/questions/' + question_id + '/votes',
+      method: 'POST',
+      data: {
+          voteable_id: 'question_id'
+      }
+    }).done(function(response){
+      $(question).find('#vote-value').text(response.votes);
+    });
+  });
+
+  $('#questions').on("click", ".down-vote", function(e){
+    e.preventDefault();
+    var question = $(this).parent();
+    var question_id = question.attr("id");
+    $(this).prop("disabled", true);
+    $.ajax({
+      url: '/questions/' + question_id + '/votes',
+      method: 'DELETE',
+      data: {
+          voteable_id: 'question_id'
+      }
+    }).done(function(response){
+      $(question).find('#vote-value').text(response);
     });
   });
 
