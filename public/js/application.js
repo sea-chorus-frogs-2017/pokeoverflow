@@ -74,4 +74,18 @@ $(document).ready(function() {
     $("#update-profile").show();
   });
 
+  $("#update-profile").on("submit", function(e) {
+    e.preventDefault();
+    var user_id = this.name;
+    var info = $(event.target).serialize();
+    $.ajax({
+      url: '/users/' + user_id,
+      method: 'POST',
+      data: info
+    }).done(function(response){
+      console.log($(response).find('.profile'))
+      $('#profile-info').replaceWith($(response).find('.profile'))
+    });
+  });
+
 });

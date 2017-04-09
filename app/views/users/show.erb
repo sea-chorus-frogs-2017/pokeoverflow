@@ -1,8 +1,8 @@
-<div id="profile">
+<div id="profile-info">
 <!-- profile image goes here -->
-  <p>Name: <%= @user.name %></p>
-  <p>Username: <%= @user.username %></p>
-  <p>Email: <%= @user.email %></p>
+  <p class="profile">Name: <%= @user.name %></p>
+  <p class="profile">Username: <%= @user.username %></p>
+  <p class="profile">Email: <%= @user.email %></p>
 </div>
 
 <!-- edit information -->
@@ -14,24 +14,11 @@
 
 <form id="update-profile" action="/users/<%= @user.id %>" method="post" name="<%= @user.id %>">
   <p> Name: </p>
-  <input class="name" type="text" value="<%= @user.name %>" name="name">
+  <input class="name" type="text" value="<%= @user.name %>" name="user[name]">
   <p> Username: </p>
-  <input class="username" type="text" value="<%= @user.username %>" name="username">
+  <input class="username" type="text" value="<%= @user.username %>" name="user[username]">
   <input type="submit">
 </form>
 
-<!-- add user.description for profile -->
-<!-- make post route, so sleepy -->
-
-<!-- <form action = "/users" method = "post">
-  <input class="name" type="text" placeholder="Name" name="user[name]">
-  <input class="username" type="text" placeholder="Username" name="user[username]">
-  <input class="email" type="email" placeholder="email@domain.com" name="user[email]">
-  <input class="password" type="password" placeholder="password" name = "user[password]">
-  <input class="submit-button" type="submit" name="Register">
-</form> -->
-
-<!-- have edit profile button bring up a form -->
-<!-- when that form submits, refresh info -->
 
 <!-- delete account -->

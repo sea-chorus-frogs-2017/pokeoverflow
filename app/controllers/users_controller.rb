@@ -20,8 +20,8 @@ end
 
 post '/users/:id' do
   @user = User.find(session[:user_id])
-  @user.name = params[:name]
-  @user.username = params[:username]
+  @user.name = params['user']['name']
+  @user.username = params['user']['username']
   @user.save
   redirect to "users/#{session[:user_id]}"
 end
