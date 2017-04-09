@@ -72,6 +72,7 @@ $(document).ready(function() {
   $(".answers").on("click", ".upvote", function(e){
     e.preventDefault();
     var question_id = this.name;
+    debugger;
     $.ajax({
       url: '/questions/' + question_id + '/votes',
       method: 'POST',
@@ -84,6 +85,7 @@ $(document).ready(function() {
     e.preventDefault();
     var question = $(this).parent();
     var question_id = question.attr("id");
+    $(this).prop("disabled", true);
     $.ajax({
       url: '/questions/' + question_id + '/votes',
       method: 'POST',

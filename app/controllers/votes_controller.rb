@@ -10,11 +10,10 @@ require 'sinatra/json'
 
 # Following Hacker News Convention of voting
 post '/questions/:voteable_id/votes' do
-  # p "==========================="
-  # p params
-  # p "==========================="
   question_id = Question.find(params[:voteable_id])
-  question_id.votes.create(value: 1)
+  if session[:user_id]
+    question_id.votes.create(value: 1)
+  end
   question = {
     question_id: question_id,
     votes: question_id.points
