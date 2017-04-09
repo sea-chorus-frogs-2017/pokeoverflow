@@ -81,6 +81,19 @@ $(document).ready(function() {
     });
   });
 
+  $(".answers").on("click", ".downvote", function(e){
+    e.preventDefault();
+    var answerId = this.name;
+    var questionId = $(this).find("button").attr("name")
+    $(event.target).prop("disabled", true);
+    $.ajax({
+      url: '/questions/' + questionId + '/answers/' + answerId + '/votes',
+      method: 'DELETE',
+    }).done(function(response){
+      $("div[name=" + answerId + "] strong").text(response);
+    });
+  });
+
 
   $('#questions').on("click", ".up-vote", function(e){
     e.preventDefault();

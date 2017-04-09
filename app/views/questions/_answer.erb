@@ -4,7 +4,7 @@
   </form>
   <form class="downvote" method="post" action="/questions/<%= question.id %>/votes" name="<%= answer.id %>">
     <input name="_method" type="hidden" value="delete" />
-    <button type="submit" class="down-vote">-</button>
+    <button type="submit" class="down-vote" name="<%= question.id %>">-</button>
   </form>
   <strong><%= answer.votes.length %></strong>
   <h4><%= answer.content %> -- <em><%= answer.username %></em></h4>
