@@ -82,8 +82,9 @@ $(document).ready(function() {
       method: 'POST',
       data: info
     }).done(function(response){
-      console.log($(response).find('.profile'))
       $('#profile-info').replaceWith($(response).find('.profile'))
+    });
+  });
 
   $(".answers").on("click", ".upvote", function(e){
     e.preventDefault();
@@ -141,7 +142,6 @@ $(document).ready(function() {
       }
     }).done(function(response){
       $(question).find('#vote-value').text(response);
-
     });
   });
 
