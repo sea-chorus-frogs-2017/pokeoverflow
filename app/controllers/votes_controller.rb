@@ -12,7 +12,10 @@ require 'sinatra/json'
 post '/questions/:voteable_id/votes' do
   question_id = Question.find(params[:voteable_id])
   if session[:user_id]
-    question_id.votes.create(value: 1)
+    question_id.votes.create( value: 1, 
+                              voteable_id: question_id, 
+                              voteable_type: "Question",
+                              user_id: session[:user_id])
   end
   question = {
     question_id: question_id,
@@ -23,7 +26,6 @@ post '/questions/:voteable_id/votes' do
   else
     redirect '/questions'
   end
-  # need to add a vote to the question's votes array
 end
 
 # As far as down-voting I'm thinking we'll have to either remove or destroy a vote value?

@@ -15,7 +15,6 @@ $(document).ready(function() {
     $('#login-form').show();
   });
 
-  // Need to change .one to .on to allow multiple questions
   $('#get-question-form').one("click", function(event){
     event.preventDefault();
     $.ajax({
@@ -72,7 +71,7 @@ $(document).ready(function() {
   $(".answers").on("click", ".upvote", function(e){
     e.preventDefault();
     var question_id = this.name;
-    debugger;
+    $(event.target).prop("disabled", true);
     $.ajax({
       url: '/questions/' + question_id + '/votes',
       method: 'POST',
