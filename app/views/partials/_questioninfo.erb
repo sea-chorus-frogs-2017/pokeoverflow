@@ -1,8 +1,8 @@
 <li>
-  <div id="vote-value">
+  <div id="<%= question.id %>">
     <button type="submit" class="up-vote">+</button>
     <button type="submit" class="down-vote">-</button>
-    <strong><%=question.votes.length%></strong>
+    <strong id="vote-value"><%=question.votes.length%></strong>
   </div>
   <a href="/questions/<%= question.id %>">
     <%= question.title %>

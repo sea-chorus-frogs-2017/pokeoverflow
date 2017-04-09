@@ -80,4 +80,19 @@ $(document).ready(function() {
     });
   });
 
+  $('#questions').on("click", ".up-vote", function(e){
+    e.preventDefault();
+    var question = $(this).parent();
+    var question_id = question.attr("id");
+    $.ajax({
+      url: '/questions/' + question_id + '/votes',
+      method: 'POST',
+      data: {
+          voteable_id: 'question_id'
+      }
+    }).done(function(response){
+      $(question).find('#vote-value').text(response.votes);
+    });
+  });
+
 });

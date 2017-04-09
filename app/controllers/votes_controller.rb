@@ -1,3 +1,4 @@
+require 'sinatra/json'
 # Displaying Votes:
   # Using the _questiontitle partial which I've gone ahead and renamed to _questioninfo
   # Vote VALUE for the question can be placed next to the question
@@ -9,10 +10,20 @@
 
 # Following Hacker News Convention of voting
 post '/questions/:voteable_id/votes' do
-  p "==========================="
-  p params
-  p "==========================="
-  question = Question.find(params[:voteable_id])
+  # p "==========================="
+  # p params
+  # p "==========================="
+  question_id = Question.find(params[:voteable_id])
+  question_id.votes.create(value: 1)
+  question = {
+    question_id: question_id,
+    votes: question_id.points
+  }
+  if request.xhr?
+    json question
+  else
+    redirect '/questions'
+  end
   # need to add a vote to the question's votes array
 end
 
