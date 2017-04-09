@@ -80,7 +80,7 @@ $(document).ready(function() {
     });
   });
 
-  $('#questions').on("click", ".up-vote", function(e){
+  $('#questions').one("click", ".up-vote", function(e){
     e.preventDefault();
     var question = $(this).parent();
     var question_id = question.attr("id");
