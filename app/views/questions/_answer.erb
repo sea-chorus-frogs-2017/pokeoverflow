@@ -1,6 +1,6 @@
 <div name="<%= answer.id %>">
   <form class="upvote" method="post" action="/questions/<%= question.id %>/votes" name="<%= answer.id %>">
-    <button type="submit" class="up-vote">+</button>
+    <button type="submit" class="up-vote" name="<%= question.id %>">+</button>
   </form>
   <form class="downvote" method="post" action="/questions/<%= question.id %>/votes" name="<%= answer.id %>">
     <input name="_method" type="hidden" value="delete" />

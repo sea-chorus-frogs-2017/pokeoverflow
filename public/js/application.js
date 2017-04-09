@@ -68,18 +68,19 @@ $(document).ready(function() {
     });
   });
 
-  // $(".answers").on("click", ".upvote", function(e){
-  //   e.preventDefault();
-  //   var question_id = this.name;
-  //   $(event.target).prop("disabled", true);
-  //   $.ajax({
-  //     url: '/questions/' + question_id + '/votes',
-  //     method: 'POST',
-  //   }).done(function(response){
-  //     $()
-  //   });
-  // });
-  // NICK COMING BACK TO WORK ON THIS
+  $(".answers").on("click", ".upvote", function(e){
+    e.preventDefault();
+    var answerId = this.name;
+    var questionId = $(this).find("button").attr("name")
+    $(event.target).prop("disabled", true);
+    $.ajax({
+      url: '/questions/' + questionId + '/answers/' + answerId + '/votes',
+      method: 'POST',
+    }).done(function(response){
+      $("div[name=" + answerId + "] strong").text(response);
+    });
+  });
+
 
   $('#questions').on("click", ".up-vote", function(e){
     e.preventDefault();

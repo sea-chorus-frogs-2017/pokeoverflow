@@ -34,3 +34,15 @@ delete '/questions/:voteable_id/votes' do
   end
   question.points.to_json
 end
+
+post '/questions/:question_id/answers/:answer_id/votes' do
+  question = Question.find(params[:question_id])
+  answer = Answer.find(params[:answer_id])
+  if session[:user_id]
+    Vote.create(value: 1, 
+                voteable_id: params[:answer_id], 
+                voteable_type: "Answer",
+                user_id: session[:user_id])
+  end
+  answer.votes.length.to_json
+end
