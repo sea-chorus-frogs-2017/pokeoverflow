@@ -68,6 +68,24 @@ $(document).ready(function() {
     });
   });
 
+  $("#get-edit-profile-form").on("click", function(e){
+    e.preventDefault();
+    $("#update-profile").show();
+  });
+
+  $("#update-profile").on("submit", function(e) {
+    e.preventDefault();
+    var user_id = this.name;
+    var info = $(event.target).serialize();
+    $.ajax({
+      url: '/users/' + user_id,
+      method: 'POST',
+      data: info
+    }).done(function(response){
+      $('#profile-info').replaceWith($(response).find('.profile'))
+    });
+  });
+
   $(".answers").on("click", ".upvote", function(e){
     e.preventDefault();
     var answerId = this.name;

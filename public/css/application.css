@@ -47,6 +47,10 @@
   display: none;
 }
 
+
+#update-profile {
+  display: none;
+
 .view-single-question li {
   list-style: none;
 }
@@ -54,6 +58,7 @@
 #vote-value {
   font-size: 32px;
 }
+
 .view-single-question a {
   margin-left: 10px;
   border-left: 1px solid black;
@@ -75,8 +80,8 @@
   font-weight:bold;
   float: left;
   margin-left: 0px
-
 }
+
 .up-vote:hover {
   background: #024210;
 }
@@ -97,8 +102,8 @@
   font-weight:bold;
   float: left;
   margin-left: 0px
-
 }
+
 .down-vote:hover {
   background: #5e0000;
 }

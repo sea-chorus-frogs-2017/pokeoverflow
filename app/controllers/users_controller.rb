@@ -17,3 +17,9 @@ get '/users/:id' do
   @user = User.find(params[:id])
   erb :'users/show'
 end
+
+post '/users/:id' do
+  @user = User.find(session[:user_id])
+  @user.update(name: params['user']['name'], username: params['user']['username'])
+  redirect to "users/#{session[:user_id]}"
+end
