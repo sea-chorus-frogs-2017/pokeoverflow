@@ -18,6 +18,10 @@ get '/users/:id' do
   erb :'users/show'
 end
 
-# post '/users/:id' do
-
-# end
+post '/users/:id' do
+  @user = User.find(session[:user_id])
+  @user.name = params[:name]
+  @user.username = params[:username]
+  @user.save
+  redirect to "users/#{session[:user_id]}"
+end

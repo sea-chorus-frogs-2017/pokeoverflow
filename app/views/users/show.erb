@@ -14,11 +14,10 @@
 
 <form id="update-profile" action="/users/<%= @user.id %>" method="post" name="<%= @user.id %>">
   <p> Name: </p>
-  <input class="name" type="text" value="<%= @user.name %>" name="user[name]">
+  <input class="name" type="text" value="<%= @user.name %>" name="name">
   <p> Username: </p>
-  <input class="username" type="text" value="<%= @user.username %>" name="user[username]">
-  <p> Description: </p>
-  <textarea cols="50" rows="8" name="user[description]" placeholder="Your description here..."></textarea>
+  <input class="username" type="text" value="<%= @user.username %>" name="username">
+  <input type="submit">
 </form>
 
 <!-- add user.description for profile -->
