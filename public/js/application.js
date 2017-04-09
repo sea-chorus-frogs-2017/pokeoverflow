@@ -81,7 +81,7 @@ $(document).ready(function() {
     });
   });
 
-  $('#questions').one("click", ".up-vote", function(e){
+  $('#questions').on("click", ".up-vote", function(e){
     e.preventDefault();
     var question = $(this).parent();
     var question_id = question.attr("id");
