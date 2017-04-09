@@ -6,14 +6,12 @@ require 'sinatra/json'
 
 # For jQUERY & AJAX
   # Refer to Hacker news
-  # Consider using .one to only allow a single click action.
 
-# Following Hacker News Convention of voting
 post '/questions/:voteable_id/votes' do
   question_id = Question.find(params[:voteable_id])
   if session[:user_id]
     question_id.votes.create( value: 1, 
-                              voteable_id: question_id, 
+                              voteable_id: params[:voteable_id], 
                               voteable_type: "Question",
                               user_id: session[:user_id])
   end
@@ -28,8 +26,11 @@ post '/questions/:voteable_id/votes' do
   end
 end
 
-# As far as down-voting I'm thinking we'll have to either remove or destroy a vote value?
 delete '/questions/:voteable_id/votes' do
   question = Question.find(params[:voteable_id])
-  # need to destroy a vote in the question's votes array
+  votes = Vote.where(voteable_id: params[:voteable_id], voteable_type: "Question")
+  if votes.length > 0
+    votes.last.destroy
+  end
+  question.points.to_json
 end

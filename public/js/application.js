@@ -68,17 +68,18 @@ $(document).ready(function() {
     });
   });
 
-  $(".answers").on("click", ".upvote", function(e){
-    e.preventDefault();
-    var question_id = this.name;
-    $(event.target).prop("disabled", true);
-    $.ajax({
-      url: '/questions/' + question_id + '/votes',
-      method: 'POST',
-    }).done(function(response){
-      $()
-    });
-  });
+  // $(".answers").on("click", ".upvote", function(e){
+  //   e.preventDefault();
+  //   var question_id = this.name;
+  //   $(event.target).prop("disabled", true);
+  //   $.ajax({
+  //     url: '/questions/' + question_id + '/votes',
+  //     method: 'POST',
+  //   }).done(function(response){
+  //     $()
+  //   });
+  // });
+  // NICK COMING BACK TO WORK ON THIS
 
   $('#questions').on("click", ".up-vote", function(e){
     e.preventDefault();
@@ -93,6 +94,22 @@ $(document).ready(function() {
       }
     }).done(function(response){
       $(question).find('#vote-value').text(response.votes);
+    });
+  });
+
+  $('#questions').on("click", ".down-vote", function(e){
+    e.preventDefault();
+    var question = $(this).parent();
+    var question_id = question.attr("id");
+    $(this).prop("disabled", true);
+    $.ajax({
+      url: '/questions/' + question_id + '/votes',
+      method: 'DELETE',
+      data: {
+          voteable_id: 'question_id'
+      }
+    }).done(function(response){
+      $(question).find('#vote-value').text(response);
     });
   });
 
