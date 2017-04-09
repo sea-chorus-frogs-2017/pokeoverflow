@@ -9,8 +9,8 @@ get '/users/new' do
 end
 
 post '/users' do
-  User.create(params[:user])
-  redirect to '/users'
+  @user = User.create(params[:user])
+  redirect to "/"
 end
 
 get '/users/:id' do
