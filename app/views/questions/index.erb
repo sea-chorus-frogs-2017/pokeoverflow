@@ -10,9 +10,9 @@
   </div>
 
 <div id="questions">
-  <ul class="view-single-question">
     <% @all_questions.each do |question| %>
+  <ul class="view-single-question">
       <%= erb :'partials/_questioninfo', locals: {question: question} %>
-    <% end %>
   </ul>
+    <% end %>
 </div>
