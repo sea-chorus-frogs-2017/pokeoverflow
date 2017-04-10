@@ -1,7 +1,5 @@
 <div class="comment-form">
   <form class="comment-form" action='/answers/<%= @answer_id %>/comments' method='post'>
-  <!-- <label>New Comment:</label><br> -->
   <textarea rows="2" cols="65" name='content' placeholder='New Comment'></textarea>
   <button class="comment-form-button" name="<%= @answer_id %>" type="button">Submit</button>
-  <!-- <input type="submit" name="comment-answer" value="Submit"/> -->
 </div>
