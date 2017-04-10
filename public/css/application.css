@@ -110,10 +110,9 @@
 }
 
 .container {
-  overflow: auto;
+  overflow-y: scroll;
   height: 100%;
   display: block;
-  overflow: auto;
   max-width: 65%;
   margin: auto;
   margin-top: 20px;
@@ -145,6 +144,7 @@ nav {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   margin: 10px;
+  border-radius: 10px;
 }
 
 p.comment-answer {
@@ -157,4 +157,21 @@ p.comment-answer {
 
 .margin {
   margin: 0% 3%;
+}
+
+textarea {
+  border-radius: 5px;
+}
+
+form input {
+  border-radius: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+button {
+  border-radius: 5px;
 }

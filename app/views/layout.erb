@@ -19,6 +19,7 @@
 </head>
 <body>
   <nav>
+    <span><a id="home-navigation" href='/'>POKE OVERFLOW</a></span>
     <a href='/questions'>Questions</a>
     <a href='/users'>Users</a>
     <% if session["user_id"] %>
@@ -30,6 +31,7 @@
       <button class="nav-buttons" id="login-button">Login</button>
       <button class="nav-buttons" id="reg-button">Register</button>
     <% end %>
+
       <div id="login-form">
         <%= erb :'users/_login' %>
       </div>
