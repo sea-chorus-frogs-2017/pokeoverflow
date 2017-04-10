@@ -39,7 +39,7 @@
 
 .nav-buttons {
   float: right;
-  margin: 5px;
+  margin: auto;
   padding: 5px;
 }
 
@@ -107,4 +107,43 @@
 
 .down-vote:hover {
   background: #5e0000;
+}
+
+.container {
+  overflow: auto;
+  height: 100%;
+  display: block;
+  overflow: auto;
+  height: 100%;
+  max-width: 870px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+html, body {
+  height: 90%;
+}
+
+body {  
+  background-image: url("https://mindbodygreen-res.cloudinary.com/images/c_scale,w_770,q_80,f_auto,fl_lossy/crp/pokebowltrend-828x492/need-know-poke-bowl-trend-nutritionist-explains.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #BFD8D2;
+}
+
+html * {
+  font-family: futura;
+}
+
+ul.view-single-question {
+  margin: 20px;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  margin: 10px;
 }
