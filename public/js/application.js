@@ -145,4 +145,28 @@ $(document).ready(function() {
     });
   });
 
+  $("div.answers").on("click", "a.new-comment-answer", function(event){
+    event.preventDefault();
+    var answerId = this.name
+    $("#comment-form-"+answerId).toggle();
+    $.ajax({
+      url: '/answers/'+answerId+'/comments/new'
+    }).done(function(response){
+      $("#comment-form-"+answerId).html(response);
+    })
+  })
+
+  $("div.container").on("click", "button.comment-form-button", function(event){
+    console.log("hello!")
+    var content = $("form.comment-form").serialize();
+    var answerId = this.name
+    $.ajax({
+      url: '/answers/'+answerId+'/comments',
+      type: 'post',
+      data: content
+    }).done(function(response){
+      $("#comment-form-"+answerId).hide();
+      $("div.new-comment").html(response);
+    })
+  })
 });
