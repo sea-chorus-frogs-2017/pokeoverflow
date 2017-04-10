@@ -38,6 +38,9 @@
   <% if @answers %>
     <% @answers.each do |answer| %>
     <%= erb :'/questions/_answer', :locals => {:question => @question, :answer => answer} %>
+      <% if session[:user_id] %>
+        <a href='/answers/<%= answer.id %>/comments/new'>Comment</a>
+      <% end %>
     <% end %>
   <% end %>
 </div>
