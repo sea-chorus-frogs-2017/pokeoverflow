@@ -37,8 +37,19 @@
   <h3> Answers: </h3>
   <% if @answers %>
     <% @answers.each do |answer| %>
+    <!-- <div id="unique-answer-<%= answer.id %>"> -->
     <%= erb :'/questions/_answer', :locals => {:question => @question, :answer => answer} %>
+      <% answer.comments.each do |comment| %>
+        <div class="margin">
+        <p><%= comment.content %></p>
+        <p class="comment-answer">Commented by -<%= comment.user.username %></p>
+        </div>
+        <!-- <p class="comment-answer"><%= comment.created_at %></p> -->
+      <% end %>
+    <!-- </div> -->
     <% end %>
+      <div class="new-comment">
+      </div>
   <% end %>
 </div>
 

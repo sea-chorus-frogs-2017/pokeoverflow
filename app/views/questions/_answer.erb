@@ -8,4 +8,9 @@
   </form>
   <strong><%= answer.votes.length %></strong>
   <h4><%= answer.content %> -- <em><%= answer.username %></em></h4>
+    <% if session[:user_id] %>
+      <a name=<%= answer.id %> class="new-comment-answer" href=answers/<%= answer.id %>/comments/new'>Comment</a>
+      <div id="comment-form-<%= answer.id %>" class="hidden">
+      </div>
+    <% end %>
 </div>
