@@ -147,3 +147,11 @@ nav {
   padding: 20px;
   margin: 10px;
 }
+
+p.comment-answer {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
