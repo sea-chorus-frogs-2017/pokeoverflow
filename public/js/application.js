@@ -145,7 +145,7 @@ $(document).ready(function() {
     });
   });
 
-  $("div.answers").on("click", "a.new-comment-answer", function(event){
+  $("div.container").on("click", "a.new-comment-answer", function(event){
     event.preventDefault();
     var answerId = this.name
     $("#comment-form-"+answerId).toggle();

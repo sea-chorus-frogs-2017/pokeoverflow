@@ -126,7 +126,7 @@ html, body {
   height: 90%;
 }
 
-body {  
+body {
   background-image: url("https://mindbodygreen-res.cloudinary.com/images/c_scale,w_770,q_80,f_auto,fl_lossy/crp/pokebowltrend-828x492/need-know-poke-bowl-trend-nutritionist-explains.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -153,4 +153,8 @@ p.comment-answer {
 
 .hidden {
   display: none;
+}
+
+.margin {
+  margin: 0% 3%;
 }
