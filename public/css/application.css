@@ -114,8 +114,7 @@
   height: 100%;
   display: block;
   overflow: auto;
-  height: 100%;
-  max-width: 870px;
+  max-width: 65%;
   margin: auto;
   margin-top: 20px;
   padding: 20px;
